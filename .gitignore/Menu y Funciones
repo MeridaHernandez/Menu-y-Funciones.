@@ -41,9 +41,9 @@ int menu()
 {
 
     int op,x;
-    cout<<"Funcion 1"<<endl;
-    cout<<"Funcion 2"<<endl;
-    cout<<"Funcion 3"<<endl;
+    cout<<"Formula 1"<<endl;
+    cout<<"Formula 2"<<endl;
+    cout<<"Formula 3"<<endl;
     cout<<"4.- Salir "<<endl;
     cin>>op;
 
