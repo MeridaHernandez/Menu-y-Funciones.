@@ -1,0 +1,126 @@
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+void tabular2(int op);
+void tabular(int op);
+float f3(int x);
+float f2(int x,int y);
+float f1(float x);
+int menu();
+int main()
+{
+    int op;
+    do{
+    op= menu();
+
+    switch(op)
+    {
+        case 1:
+               tabular(op);
+        break;
+        case 2:
+               tabular2(op);
+        break;
+        case 3:
+                tabular(op);
+        break;
+        case 4:
+               cout<<"Salio" <<endl;
+        break;
+        default:cout<<"~~E R R O R~~" <<endl;
+
+    }
+    }    while(op!=4);
+
+
+    return 0;
+}
+
+int menu()
+{
+
+    int op,x;
+    cout<<"Funcion 1"<<endl;
+    cout<<"Funcion 2"<<endl;
+    cout<<"Funcion 3"<<endl;
+    cout<<"4.- Salir "<<endl;
+    cin>>op;
+
+    return op;
+
+}
+
+float f1(float x)
+{
+    float r=0.0;
+    r=(2*(pow(x,0.66667)))/((2*x)-3);
+    return r;
+}
+
+float f2(int x,int y)
+{
+    float r=0.0;
+    r=(2*x*y)-(3*y);
+    return r;
+}
+
+float f3(int x)
+{
+    float r=0.0;
+    if(x>0)
+    {
+        r=2*(pow(x,3));
+    }
+    else
+    {
+        r=3*(pow(x,2));
+    }
+    
+    return r;
+}
+
+void tabular(int op)
+{
+    int su;
+    cout<<"Limite Superior:  ";
+    cin>>su;
+    
+    if(op==1)
+    {
+        for(int i=0;i<=su;i++)
+        {
+            cout<<i <<"  " <<f1(i) <<endl;
+        }
+    }
+    
+    if(op==3)
+    {
+        if(su>0)
+        {
+           for(int i=0;i<=su;i++)
+            {
+                cout<<i <<"  " <<f3(i) <<endl;
+            }
+        }
+        
+        else
+        
+            for(int i=su;i<=0;i++)
+                {
+                    cout<<i <<"  " <<f3(i) <<endl;
+                }
+    }
+}
+
+void tabular2(int op)
+{
+    cout<<"| x | y |  f(x,y)"<<endl;
+    
+                for(int i=1;i<=5;i++)
+                    for(int j=1;j<=5;j++)
+                    {
+                        cout<<i <<" | " <<j <<" |  " <<f2(i,j) <<endl;
+                    }
+                    
+}
